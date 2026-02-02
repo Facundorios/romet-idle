@@ -5,19 +5,19 @@ import { Logger, ValidationPipe, VersioningType } from '@nestjs/common';
 import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
-  const logger = new Logger('Idle111');
+  const logger = new Logger('Main Server');
 
   const app = await NestFactory.create(AppModule);
 
   // app.use(helmet());
   app.use(cookieParser());
 
-  app.setGlobalPrefix('idle');
+  // app.setGlobalPrefix('api');
 
-  app.enableVersioning({
-    type: VersioningType.URI,
-    defaultVersion: '1',
-  });
+  // app.enableVersioning({
+  //   type: VersioningType.URI,
+  //   defaultVersion: '1',
+  // });
 
   app.enableCors({
     origin: envs.ALLOWED_ORIGINS,

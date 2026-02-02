@@ -12,10 +12,9 @@ RUN npm install
 #Copiar el resto del proyecto
 COPY . . 
 
-# Generar cliente de Prisma
-# RUN npx prisma generate
 
 #Exponer el puerto
-EXPOSE 3000
+EXPOSE 4000
 
+# Generar instancia de prisma
 CMD ["sh", "-c", "npx prisma generate && npm run start:dev"]
